@@ -18,7 +18,9 @@ weatherForm.addEventListener('submit', (e) => {
             } else {
                 paragraphTwo.style.display = 'block'
                 paragraphOne.textContent = 'Location: ' + data.location
-                paragraphTwo.textContent = 'Forecast: ' + data.forecast
+                paragraphTwo.innerHTML = 'Forecast: ' + data.forecast
+                paragraphTwo.innerHTML = paragraphTwo.innerHTML + '<br>' + 'Max temperature: '+ data.temperatureMax
+                paragraphTwo.innerHTML = paragraphTwo.innerHTML + '<br>' + 'Min temperature: '+ data.temperatureMin 
             }
         })
     })

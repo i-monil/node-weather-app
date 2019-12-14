@@ -9,7 +9,9 @@ const forecast = ( latitude, longitude, callback) => {
         } else if (body.error) {
             callback(body.error, undefined)
         } else {
-            callback(undefined, body.daily.data[0].summary+ '. It is '+ body.currently.temperature+' degrees out with a '+body.currently.precipProbability+'% chance of rain.')
+            temperatureMax = body.daily.data[0].temperatureHigh
+            temperatureMin = body.daily.data[0].temperatureLow
+            callback(undefined, body.daily.data[0].summary+ '. It is '+ body.currently.temperature+' degrees out with a '+body.currently.precipProbability+'% chance of rain.',temperatureMax, temperatureMin )
         }
     })
 }

@@ -6,7 +6,7 @@ const paragraphTwo = document.querySelector('#para-2')
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    const url = 'http://localhost:3000/weather?address=' + searchBox.value
+    const url = '/weather?address=' + searchBox.value
 
     paragraphOne.style.display = 'block'
     paragraphOne.textContent = 'Loading...'
